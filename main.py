@@ -31,11 +31,11 @@ async def startup_event():
         await conn.run_sync(Base.metadata.create_all)
 
 
-print("start", __name__)
+print("start", __name__, "this")
 
 
-if __name__ == "__main__":
+if __name__ == "main":
     import uvicorn
 
-    print("start")
+    print("entro")
     uvicorn.run(app)

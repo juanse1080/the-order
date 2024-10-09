@@ -7,9 +7,6 @@ from app.db.connection import engine
 
 app = FastAPI()
 
-
-app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

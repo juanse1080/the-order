@@ -7,6 +7,7 @@ from ..schemas.order_schema import (
     OrderDetailResponse,
     OrderListResponse,
     OrderResponse,
+    UpdateOrderInput,
 )
 from ..services.order_service import OrderService
 
@@ -44,6 +45,15 @@ async def get_order(
     order_service: OrderService = Depends(get_order_service),
 ):
     return await order_service.get_by_id(id=order_id)
+
+
+@router.patch("/order/{order_id}", response_model=OrderDetailResponse)
+async def update_order(
+    order_id: int,
+    order_input: UpdateOrderInput,
+    order_service: OrderService = Depends(get_order_service),
+):
+    return await order_service.update(id=order_id, input=order_input)
 
 
 @router.delete("/order/{order_id}", response_model=OrderResponse)

@@ -1,19 +1,22 @@
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.controllers import order_controller, product_controller, restaurant_controller
 from app.models.common_model import Base
 from app.db.connection import engine
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.get("/")
-async def root():
-    return HTMLResponse("Hello World")
+app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(restaurant_controller.router)
 app.include_router(product_controller.router)
@@ -29,13 +32,3 @@ async def shutdown_event():
 async def startup_event():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
-
-print("start", __name__, "this")
-
-
-if __name__ == "main":
-    import uvicorn
-
-    print("entro")
-    uvicorn.run(app)

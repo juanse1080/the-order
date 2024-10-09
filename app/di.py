@@ -49,7 +49,6 @@ async def get_restaurant_service(
 
 async def get_order_service(
     order_repository: OrderRepository = Depends(get_order_repository),
-    line_item_repository: LineItemRepository = Depends(get_line_item_repository),
     restaurant_repository: RestaurantRepository = Depends(get_restaurant_repository),
 ) -> OrderService:
-    return OrderService(order_repository, line_item_repository, restaurant_repository)
+    return OrderService(order_repository, restaurant_repository)

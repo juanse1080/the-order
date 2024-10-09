@@ -34,7 +34,6 @@ class RestaurantRepository:
         self.db.add(restaurant)
         await self.db.commit()
         await self.db.refresh(restaurant)
-        print({"restaurant": restaurant})
         return restaurant
 
     async def get_by_id(self, id: int) -> Optional[RestaurantModel]:

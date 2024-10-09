@@ -20,6 +20,7 @@ class RestaurantService:
 
     async def list(self, page: int, limit: int) -> RestaurantListResponse:
         restaurants = await self.restaurant_repository.list(page=page, limit=limit)
+
         count = await self.restaurant_repository.count()
 
         return {

@@ -1,6 +1,8 @@
 from enum import Enum
 from typing import Optional
 from pydantic import BaseModel
+
+from app.schemas.product_schema import ProductResponse
 from ..schemas.common_schema import MetadataResponse, TimestampResponse
 
 
@@ -22,6 +24,7 @@ class LineItemResponse(TimestampResponse, BaseModel):
     comments: str
     order_id: int
     product_id: int
+    product: ProductResponse
 
     class Config:
         orm_mode = True
@@ -33,7 +36,6 @@ class OrderDetailResponse(TimestampResponse, BaseModel):
     restaurant_id: int
     state_code: str
     package_code: str
-    line_items: list[LineItemResponse]
 
 
 class OrderResponse(TimestampResponse, BaseModel):
@@ -42,6 +44,7 @@ class OrderResponse(TimestampResponse, BaseModel):
     restaurant_id: int
     state_code: str
     package_code: str
+    line_items: list[LineItemResponse]
 
     class Config:
         orm_mode = True
@@ -68,3 +71,8 @@ class CreateOrderInput(BaseModel):
     buyer_name: str
     package_code: str
     line_items: list[CreateLineItem]
+
+
+class UpdateOrderInput(BaseModel):
+    state_code: Optional[str] = None
+    package_code: Optional[str] = None

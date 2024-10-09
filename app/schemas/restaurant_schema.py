@@ -23,5 +23,5 @@ class CreateRestaurant(BaseModel):
 
 
 class UpdateRestaurant(BaseModel):
-    name: Optional[str] | None = None
-    logo: Optional[str] | None = None
+    name: Optional[str] = None
+    logo: Optional[str] = None

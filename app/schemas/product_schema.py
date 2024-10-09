@@ -28,7 +28,7 @@ class CreateProduct(BaseModel):
 
 
 class UpdateProduct(BaseModel):
-    name: Optional[str] | None = None
-    image: Optional[str] | None = None
-    description: Optional[str] | None = None
+    name: Optional[str] = None
+    image: Optional[str] = None
+    description: Optional[str] = None
     price: Optional[int] | None = None

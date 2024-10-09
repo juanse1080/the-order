@@ -55,7 +55,7 @@ class OrderListResponse(BaseModel):
 class CreateLineItem(BaseModel):
     product_id: int
     qyt_ordened: int
-    comments: Optional[str] | None = None
+    comments: Optional[str] = None
 
 
 class CreateOrder(BaseModel):

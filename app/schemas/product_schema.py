@@ -31,4 +31,4 @@ class UpdateProduct(BaseModel):
     name: Optional[str] = None
     image: Optional[str] = None
     description: Optional[str] = None
-    price: Optional[int] | None = None
+    price: Optional[int] = None

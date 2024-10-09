@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
-from app.schemas.common_schema import MetadataResponse, TimestampResponse
+from ..schemas.common_schema import MetadataResponse, TimestampResponse
 
 
 class RestaurantResponse(TimestampResponse, BaseModel):

@@ -2,8 +2,8 @@ from typing import Optional
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.order_model import OrderModel
-from app.schemas.order_schema import CreateOrder
+from ..models.order_model import OrderModel
+from ..schemas.order_schema import CreateOrder
 
 
 class OrderRepository:

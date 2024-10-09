@@ -1,10 +1,10 @@
 from sqlalchemy import delete, func, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from app.models.restaurant_model import RestaurantModel
+from ..models.restaurant_model import RestaurantModel
 from typing import Optional
 
-from app.schemas.restaurant_schema import CreateRestaurant, UpdateRestaurant
+from ..schemas.restaurant_schema import CreateRestaurant, UpdateRestaurant
 
 
 class RestaurantRepository:

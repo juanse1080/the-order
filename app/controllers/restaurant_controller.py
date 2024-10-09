@@ -1,15 +1,15 @@
 from fastapi import APIRouter, Depends
-from app.di import get_product_service, get_restaurant_service
-from app.schemas.common_schema import PaginationInput
-from app.schemas.product_schema import ProductListResponse, ProductResponse
-from app.schemas.restaurant_schema import (
+from ..di import get_product_service, get_restaurant_service
+from ..schemas.common_schema import PaginationInput
+from ..schemas.product_schema import ProductListResponse, ProductResponse
+from ..schemas.restaurant_schema import (
     CreateRestaurant,
     RestaurantListResponse,
     RestaurantResponse,
     UpdateRestaurant,
 )
-from app.services.product_service import ProductService
-from app.services.restaurant_service import RestaurantService
+from ..services.product_service import ProductService
+from ..services.restaurant_service import RestaurantService
 
 router = APIRouter()
 

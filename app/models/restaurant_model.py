@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from app.models.common_model import TimestampMixin, Base
+from ..models.common_model import TimestampMixin, Base
 
 
 class RestaurantModel(TimestampMixin, Base):

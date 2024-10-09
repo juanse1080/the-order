@@ -1,13 +1,13 @@
 from fastapi import Depends
-from app.adapters.repositories.line_item_repository import LineItemRepository
-from app.adapters.repositories.order_repository import OrderRepository
-from app.adapters.repositories.product_repository import ProductRepository
-from app.adapters.repositories.restaurant_repository import RestaurantRepository
-from app.db.connection import get_db
-from app.services.order_service import OrderService
-from app.services.product_service import ProductService
-from app.services.restaurant_service import RestaurantService
 from sqlalchemy.ext.asyncio import AsyncSession
+from .repositories.line_item_repository import LineItemRepository
+from .repositories.order_repository import OrderRepository
+from .repositories.product_repository import ProductRepository
+from .repositories.restaurant_repository import RestaurantRepository
+from .db.connection import get_db
+from .services.order_service import OrderService
+from .services.product_service import ProductService
+from .services.restaurant_service import RestaurantService
 
 
 async def get_restaurant_repository(

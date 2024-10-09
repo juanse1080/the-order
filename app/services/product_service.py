@@ -1,13 +1,13 @@
 from fastapi import HTTPException
-from app.adapters.repositories.product_repository import ProductRepository
-from app.adapters.repositories.restaurant_repository import RestaurantRepository
-from app.schemas.product_schema import (
+from ..repositories.product_repository import ProductRepository
+from ..repositories.restaurant_repository import RestaurantRepository
+from ..schemas.product_schema import (
     CreateProduct,
     ProductListResponse,
     ProductResponse,
     UpdateProduct,
 )
-from app.schemas.restaurant_schema import RestaurantResponse
+from ..schemas.restaurant_schema import RestaurantResponse
 
 
 class ProductService:

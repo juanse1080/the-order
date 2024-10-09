@@ -2,8 +2,8 @@ from typing import Optional
 from sqlalchemy import insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.order_model import LineItemModel
-from app.schemas.order_schema import CreateLineItem
+from ..models.order_model import LineItemModel
+from ..schemas.order_schema import CreateLineItem
 
 
 class LineItemRepository:

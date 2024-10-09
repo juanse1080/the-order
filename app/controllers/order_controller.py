@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends
 
-from app.di import get_order_service
-from app.schemas.common_schema import PaginationInput
-from app.schemas.order_schema import (
+from ..di import get_order_service
+from ..schemas.common_schema import PaginationInput
+from ..schemas.order_schema import (
     CreateOrderInput,
     OrderDetailResponse,
     OrderListResponse,
     OrderResponse,
 )
-from app.services.order_service import OrderService
+from ..services.order_service import OrderService
 
 
 router = APIRouter()

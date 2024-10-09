@@ -1,6 +1,6 @@
 from fastapi import HTTPException
-from app.adapters.repositories.restaurant_repository import RestaurantRepository
-from app.schemas.restaurant_schema import (
+from ..repositories.restaurant_repository import RestaurantRepository
+from ..schemas.restaurant_schema import (
     CreateRestaurant,
     RestaurantListResponse,
     RestaurantResponse,

@@ -1,8 +1,8 @@
-from app.adapters.repositories.line_item_repository import LineItemRepository
-from app.adapters.repositories.order_repository import OrderRepository
-from app.adapters.repositories.restaurant_repository import RestaurantRepository
-from app.models.order_model import LineItemModel, OrderModel
-from app.schemas.order_schema import (
+from ..repositories.line_item_repository import LineItemRepository
+from ..repositories.order_repository import OrderRepository
+from ..repositories.restaurant_repository import RestaurantRepository
+from ..models.order_model import LineItemModel, OrderModel
+from ..schemas.order_schema import (
     CreateLineItem,
     CreateOrder,
     CreateOrderInput,
@@ -12,7 +12,7 @@ from app.schemas.order_schema import (
     OrderResponse,
     StateCode,
 )
-from app.schemas.restaurant_schema import RestaurantResponse
+from ..schemas.restaurant_schema import RestaurantResponse
 
 
 class OrderService:

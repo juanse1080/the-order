@@ -9,9 +9,11 @@ from app.db.connection import engine
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+
 @app.get("/")
 async def root():
     return HTMLResponse("Hello World")
+
 
 app.include_router(restaurant_controller.router)
 app.include_router(product_controller.router)
@@ -28,6 +30,12 @@ async def startup_event():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
-if __name__ == '__main__':
+
+print("start", __name__)
+
+
+if __name__ == "__main__":
     import uvicorn
+
+    print("start")
     uvicorn.run(app)
